@@ -118,6 +118,7 @@
     valgrind
     clang-tools
     cmake
+    btop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
