@@ -33,7 +33,7 @@
           
           # Kích hoạt các ngôn ngữ bạn cần
           nix.enable = true;
-          c.enable = true;
+          clang.enable = true;
           python.enable = true;
         };
 
