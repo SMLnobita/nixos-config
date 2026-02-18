@@ -3,7 +3,9 @@
 {
   programs.nvf = {
     enable = true;
-    
+
+    enableManpages = true;
+
     settings = {
       vim = {
         viAlias = true;
@@ -36,7 +38,6 @@
         };
 
         # Bật tra cứu tài liệu nvf bằng lệnh man 5 nvf
-        enableManpages = true;
       };
     };
   };
