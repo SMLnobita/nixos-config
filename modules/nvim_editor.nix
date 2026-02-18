@@ -3,44 +3,61 @@
 {
   programs.nvf = {
     enable = true;
-
     enableManpages = true;
 
     settings = {
       vim = {
         viAlias = true;
         vimAlias = true;
-        
-        # Giao diện (Theme Catppuccin Mocha rất dịu mắt)
+
+        # --- 1. CẤU HÌNH THỤT LỀ CƠ BẢN ---
+        options = {
+          autoindent = true; # Tự động lấy lề theo dòng phía trên
+          shiftwidth = 4;    # Độ rộng thụt lề là 4 khoảng trắng (chuẩn C)
+          tabstop = 4;       # Độ rộng của 1 phím Tab
+        };
+
+        # Giao diện
         theme = {
           enable = true;
           name = "catppuccin";
           style = "mocha";
         };
+
+        # Cấu hình Copy/Paste
         clipboard = {
           enable = true;
           registers = "unnamedplus";
           providers.wl-copy.enable = true;
         };
-        # Các tính năng cốt lõi (gần giống trải nghiệm LazyVim)
-        statusline.lualine.enable = true; # Thanh trạng thái
-        telescope.enable = true;          # Tìm kiếm file cực nhanh (dùng phím Space + f + f)
-        filetree.neo-tree.enable = true;  # Cây thư mục bên trái
-        
-        # Bật gợi ý code (Autocomplete)
+
+        # Các plugin giao diện & tiện ích
+        statusline.lualine.enable = true;
+        telescope.enable = true;
+        filetree.neo-tree.enable = true;
         autocomplete.nvim-cmp.enable = true;
-        lsp.enable = true;        # Bật Language Server Protocol
-        # Cấu hình ngôn ngữ lập trình
-        languages = {
-          enableTreesitter = true; # Bật highlight code thông minh
-          
-          # Kích hoạt các ngôn ngữ bạn cần
-          nix.enable = true;
-          clang.enable = true;
-          python.enable = true;
+
+        # --- 2. CẤU HÌNH LSP & TỰ ĐỘNG FORMAT ---
+        lsp = {
+          enable = true;
+          formatOnSave = true; # Tự động format code mỗi khi bạn lưu file (:w)
         };
 
-        # Bật tra cứu tài liệu nvf bằng lệnh man 5 nvf
+        # --- 3. THỤT LỀ THÔNG MINH CHO DẤU {} ---
+        treesitter = {
+          indent.enable = true; # Nhận diện cú pháp để tự đẩy lề vào trong khi gõ Enter
+        };
+
+        # --- 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix) ---
+        languages = {
+          enableTreesitter = true;
+          enableFormat = true; # Kích hoạt bộ format cho tất cả các ngôn ngữ bên dưới
+          
+          # Các ngôn ngữ được kích hoạt
+          nix.enable = true;
+          clang.enable = true; # Phụ trách hỗ trợ lập trình C/C++ và tự dùng clang-format
+          python.enable = true;
+        };
       };
     };
   };
