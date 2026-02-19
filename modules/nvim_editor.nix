@@ -12,12 +12,15 @@
         viAlias = true;
         vimAlias = true;
 
-        # --- 1. CẤU HÌNH THỤT LỀ CƠ BẢN ---
+        # --- THIẾT LẬP PHÍM LEADER (Dấu cách) ---
+        globals.mapleader = " ";
+
+        # 1. CẤU HÌNH THỤT LỀ CƠ BẢN
         options = {
-          autoindent = true; # Tự động lấy lề theo dòng phía trên
-          smartindent = true; # Tự động lấy lề theo dòng phía trên
-          shiftwidth = 2; # Độ rộng thụt lề là 4 khoảng trắng (chuẩn C)
-          tabstop = 2; # Độ rộng của 1 phím Tab
+          autoindent = true;
+          smartindent = true;
+          shiftwidth = 2; # Độ rộng thụt lề chuẩn cho Nix
+          tabstop = 2;
         };
 
         # Giao diện
@@ -37,32 +40,49 @@
         # Các plugin giao diện & tiện ích
         statusline.lualine.enable = true;
         telescope.enable = true;
-        filetree.neo-tree.enable = true;
         autocomplete.nvim-cmp.enable = true;
         autopairs.nvim-autopairs.enable = true;
         dashboard.dashboard-nvim.enable = true;
 
-        # --- 2. CẤU HÌNH LSP & TỰ ĐỘNG FORMAT ---
+        # --- CẤU HÌNH CÂY THƯ MỤC ---
+        filetree.neo-tree.enable = true;
+
+        # --- 5. THIẾT LẬP PHÍM TẮT (Keymaps) ---
+        keymaps = [
+          {
+            key = "<leader><leader>";
+            action = ":Telescope find_files<CR>";
+            mode = "n";
+            desc = "Tìm file nhanh (Space + Space)";
+          }
+          {
+            key = "<leader>e";
+            action = ":Neotree toggle<CR>";
+            mode = "n";
+            desc = "Bật/Tắt cây thư mục (Space + e)";
+          }
+        ];
+
+        # 2. CẤU HÌNH LSP & TỰ ĐỘNG FORMAT
         lsp = {
           enable = true;
-          formatOnSave = true; # Tự động format code mỗi khi bạn lưu file (:w)
+          formatOnSave = true;
         };
 
-        # --- 3. THỤT LỀ THÔNG MINH CHO DẤU {} ---
+        # 3. THỤT LỀ THÔNG MINH CHO DẤU {}
         treesitter = {
           indent = {
-            enable = true;
+            enable = true; # Viết dạng khối này để tránh lỗi merge option
           };
         };
 
-        # --- 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix) ---
+        # 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix)
         languages = {
           enableTreesitter = true;
-          enableFormat = true; # Kích hoạt bộ format cho tất cả các ngôn ngữ bên dưới
+          enableFormat = true;
 
-          # Các ngôn ngữ được kích hoạt
           nix.enable = true;
-          clang.enable = true; # Phụ trách hỗ trợ lập trình C/C++ và tự dùng clang-format
+          clang.enable = true;
           python.enable = true;
         };
       };
