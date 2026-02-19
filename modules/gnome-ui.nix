@@ -23,6 +23,9 @@
           center-new-windows = true;
           experimental-features = ["scale-monitor-framebuffer"];
         };
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
+        };
       };
     }
   ];
