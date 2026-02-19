@@ -12,6 +12,7 @@
     ./hosts/nvidia.nix
     ./modules/fonts.nix
     ./modules/nvim_editor.nix
+    ./modules/wallpaper.nix
   ];
 
   # Bootloader.
