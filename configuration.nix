@@ -12,7 +12,9 @@
     ./hosts/nvidia.nix
     ./modules/fonts.nix
     ./modules/nvim_editor.nix
+    ./modules/gnome-ui.nix
     ./modules/wallpaper.nix
+    ./modules/gnome-extensions.nix
   ];
 
   # Bootloader.
