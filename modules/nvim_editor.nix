@@ -64,6 +64,32 @@
           clang.enable = true; # Phụ trách hỗ trợ lập trình C/C++ và tự dùng clang-format
           python.enable = true;
         };
+
+        # --- 5. GIAO DIỆN CHUẨN VSCODE ---
+
+        # 5.1. Thanh Tab hiển thị các file đang mở ở trên cùng
+        tabline.nvimBufferline.enable = true;
+
+        # 5.2. Terminal tích hợp (Bấm phím Ctrl + \ để bật/tắt terminal ở dưới đáy)
+        terminal.toggleterm = {
+          enable = true;
+          lazygit.enable = true; # Tích hợp thêm giao diện git xịn xò
+        };
+
+        # 5.3. Hiển thị vạch màu Git ở mép trái (báo hiệu dòng nào mới thêm/sửa/xóa)
+        git.gitsigns.enable = true;
+
+        # 5.4. Breadcrumbs (Thanh hiển thị tên hàm/class đang đứng ở trên đỉnh màn hình)
+        ui.breadcrumbs = {
+          enable = true;
+          navbuddy.enable = true;
+        };
+
+        # 5.5. Kẻ đường chỉ dọc mờ mờ để dễ nhìn các khối { } (Indent guides)
+        visuals.indent-blankline.enable = true;
+
+        # 5.6. Màn hình Welcome khi vừa mở nvim lên (giống màn hình khởi động VSCode)
+        dashboard.alpha.enable = true;
       };
     };
   };
