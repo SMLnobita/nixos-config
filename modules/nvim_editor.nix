@@ -133,6 +133,11 @@
           action = ":LazyGit<CR>";
           mode = "n";
         }
+        {
+          key = "<Esc><Esc>";
+          action = "<C-\\><C-n>";
+          mode = "t";
+        }
       ];
 
       lsp = {
