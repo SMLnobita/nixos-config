@@ -7,84 +7,142 @@
     enable = true;
     enableManpages = true;
 
-    settings = {
-      vim = {
-        viAlias = true;
-        vimAlias = true;
+    settings.vim = {
+      viAlias = true;
+      vimAlias = true;
 
-        # --- THIẾT LẬP PHÍM LEADER (Dấu cách) ---
-        globals.mapleader = " ";
+      # Leader là Space
+      globals.mapleader = " ";
 
-        # 1. CẤU HÌNH THỤT LỀ CƠ BẢN
-        options = {
-          autoindent = true;
-          smartindent = true;
-          shiftwidth = 2; # Độ rộng thụt lề chuẩn cho Nix
-          tabstop = 2;
-        };
+      options = {
+        autoindent = true;
+        smartindent = true;
+        shiftwidth = 2;
+        tabstop = 2;
+      };
 
-        # Giao diện
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "mocha";
-        };
+      theme = {
+        enable = true;
+        name = "catppuccin";
+        style = "mocha";
+      };
 
-        # Cấu hình Copy/Paste
-        clipboard = {
-          enable = true;
-          registers = "unnamedplus";
-          providers.wl-copy.enable = true;
-        };
+      clipboard = {
+        enable = true;
+        registers = "unnamedplus";
+        providers.wl-copy.enable = true;
+      };
 
-        # Các plugin giao diện & tiện ích
-        statusline.lualine.enable = true;
-        telescope.enable = true;
-        autocomplete.nvim-cmp.enable = true;
-        autopairs.nvim-autopairs.enable = true;
-        dashboard.dashboard-nvim.enable = true;
+      statusline.lualine.enable = true;
+      telescope.enable = true;
+      autocomplete.nvim-cmp.enable = true;
+      autopairs.nvim-autopairs.enable = true;
+      dashboard.dashboard-nvim.enable = true;
+      filetree.neo-tree.enable = true;
+      tabline.nvimBufferline.enable = true;
 
-        # --- CẤU HÌNH CÂY THƯ MỤC ---
-        filetree.neo-tree.enable = true;
+      # Terminal + LazyGit
+      terminal.toggleterm = {
+        enable = true;
+        lazygit.enable = true;
+      };
 
-        # --- 5. THIẾT LẬP PHÍM TẮT (Keymaps) ---
-        keymaps = [
-          {
-            key = "<leader><leader>";
-            action = ":Telescope find_files<CR>";
-            mode = "n";
-            desc = "Tìm file nhanh (Space + Space)";
-          }
-          {
-            key = "<leader>e";
-            action = ":Neotree toggle<CR>";
-            mode = "n";
-            desc = "Bật/Tắt cây thư mục (Space + e)";
-          }
-        ];
+      keymaps = [
+        # Telescope & Filetree
+        {
+          key = "<leader><leader>";
+          action = ":Telescope find_files<CR>";
+          mode = "n";
+        }
+        {
+          key = "<leader>e";
+          action = ":Neotree toggle<CR>";
+          mode = "n";
+        }
+        {
+          key = "<leader>sg";
+          action = ":Telescope live_grep<CR>";
+          mode = "n";
+        }
+        {
+          key = "<leader>fr";
+          action = ":Telescope oldfiles<CR>";
+          mode = "n";
+        }
 
-        # 2. CẤU HÌNH LSP & TỰ ĐỘNG FORMAT
-        lsp = {
-          enable = true;
-          formatOnSave = true;
-        };
+        # Cửa sổ (Windows)
+        {
+          key = "<leader>|";
+          action = ":vsplit<CR>";
+          mode = "n";
+        }
+        {
+          key = "<leader>-";
+          action = ":split<CR>";
+          mode = "n";
+        }
+        {
+          key = "<C-h>";
+          action = "<C-w>h";
+          mode = "n";
+        }
+        {
+          key = "<C-j>";
+          action = "<C-w>j";
+          mode = "n";
+        }
+        {
+          key = "<C-k>";
+          action = "<C-w>k";
+          mode = "n";
+        }
+        {
+          key = "<C-l>";
+          action = "<C-w>l";
+          mode = "n";
+        }
 
-        # 3. THỤT LỀ THÔNG MINH CHO DẤU {}
-        treesitter = {
-          indent = {
-            enable = true; # Viết dạng khối này để tránh lỗi merge option
-          };
-        };
+        # Buffers & Terminal
+        {
+          key = "<S-h>";
+          action = ":bprevious<CR>";
+          mode = "n";
+        }
+        {
+          key = "<S-l>";
+          action = ":bnext<CR>";
+          mode = "n";
+        }
+        {
+          key = "<leader>bd";
+          action = ":bdelete<CR>";
+          mode = "n";
+        }
+        {
+          key = "<C-\\>";
+          action = ":ToggleTerm<CR>";
+          mode = "n";
+        }
+        {
+          key = "<leader>gg";
+          action = ":LazyGit<CR>";
+          mode = "n";
+        }
+      ];
 
-        # 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix)
-        languages = {
-          enableTreesitter = true;
-          enableFormat = true;
+      lsp = {
+        enable = true;
+        formatOnSave = true;
+      };
 
-          nix.enable = true;
-          clang.enable = true;
-          python.enable = true;
-        };
+      treesitter.indent.enable = true;
+
+      languages = {
+        enableTreesitter = true;
+        enableFormat = true;
+        nix.enable = true;
+        clang.enable = true;
+        python.enable = true;
       };
     };
   };
