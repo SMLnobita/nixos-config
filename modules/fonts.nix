@@ -41,7 +41,7 @@ in {
         "org/gnome/desktop/interface" = {
           font-name = "SF Pro Text 12";
           document-font-name = "SF Pro Text 12";
-          monospace-font-name = "JetBrainsMono Nerd Font Mono SemiBold 12";
+          monospace-font-name = "JetBrainsMono Nerd Font Mono, SemiBold 12";
           text-scaling-factor = 1.0;
         };
 
