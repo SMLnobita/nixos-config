@@ -49,8 +49,10 @@
 
         # --- 3. THỤT LỀ THÔNG MINH CHO DẤU {} ---
         treesitter = {
-          indent.enable = true; # Nhận diện cú pháp để tự đẩy lề vào trong khi gõ enableTreesitter
-          disable = ["nix"];
+          indent = {
+                enable = true;
+                disable = [ "nix" ];
+            }
         };
 
         # --- 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix) ---
