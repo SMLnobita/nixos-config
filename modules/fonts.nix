@@ -27,7 +27,7 @@ in {
     };
 
     fontconfig.defaultFonts = {
-      monospace = ["JetBrainsMono Nerd Font Mono:style=SemiBold"];
+      monospace = ["JetBrainsMono Nerd Font Mono"];
       sansSerif = ["SF Pro Text"];
       serif = ["SF Pro Text"];
     };
@@ -41,8 +41,14 @@ in {
         "org/gnome/desktop/interface" = {
           font-name = "SF Pro Text 12";
           document-font-name = "SF Pro Text 12";
-          monospace-font-name = "JetBrainsMono Nerd Font Mono, SemiBold 12";
+
+          # 👇 chọn thẳng SemiBold tại đây
+          monospace-font-name = "JetBrainsMono Nerd Font Mono SemiBold 12";
+
           text-scaling-factor = 1.0;
+          font-hinting = "none";
+          font-antialiasing = "rgba";
+          font-rgba-order = "rgb";
         };
 
         "org/gnome/desktop/wm/preferences" = {
