@@ -95,7 +95,7 @@
     description = "NguyenHoa";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      #  thunderbird
+      # whitesur-cursors
     ];
   };
 
@@ -127,6 +127,9 @@
     cmake
     btop
     gnomeExtensions.user-themes
+    whitesur-cursors
+    dracula-theme
+    dracula-icon-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

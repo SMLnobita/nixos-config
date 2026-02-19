@@ -15,6 +15,9 @@
           clock-show-seconds = false;
           enable-animations = true;
           gtk-enable-primary-paste = false;
+          cursor-theme = "WhiteSur-cursors";
+          icon-theme = "Dracula";
+          gtk-theme = "Dracula";
         };
 
         "org/gnome/mutter" = {
@@ -23,8 +26,12 @@
           center-new-windows = true;
           experimental-features = ["scale-monitor-framebuffer"];
         };
+
         "org/gnome/desktop/wm/preferences" = {
           button-layout = "appmenu:minimize,maximize,close";
+        };
+        "org/gnome/shell/extensions/user-theme" = {
+          name = "Dracula";
         };
       };
     }
