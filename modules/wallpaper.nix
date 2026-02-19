@@ -24,10 +24,6 @@ in {
       [org.gnome.desktop.screensaver]
       picture-uri='file://${dark}'
 
-      [org.gnome.desktop.wm.preferences]
-      button-layout='close,minimize,maximize:'
-      focus-mode='click'
-
       [org.gnome.desktop.interface]
       enable-hot-corners=true
       show-battery-percentage=true
@@ -40,6 +36,7 @@ in {
       dynamic-workspaces=true
       edge-tiling=true
       center-new-windows=true
+      experimental-features=['scale-monitor-framebuffer']
     '';
   };
 }
