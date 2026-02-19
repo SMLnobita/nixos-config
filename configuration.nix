@@ -130,6 +130,7 @@
     whitesur-cursors
     dracula-theme
     dracula-icon-theme
+    wezterm
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
