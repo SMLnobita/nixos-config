@@ -3,7 +3,10 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  light = ../wallpapers/light.png;
+  dark = ../wallpapers/dark.jpg;
+in {
   programs.dconf.enable = true;
 
   services.desktopManager.gnome = {
@@ -13,12 +16,30 @@
 
     extraGSettingsOverrides = ''
       [org.gnome.desktop.background]
-      picture-uri='file://${../Wallpapers/light.png}'
-      picture-uri-dark='file://${../Wallpapers/dark.jpg}'
+      picture-uri='file://${light}'
+      picture-uri-dark='file://${dark}'
       picture-options='zoom'
+      color-shading-type='solid'
 
       [org.gnome.desktop.screensaver]
-      picture-uri='file://${../Wallpapers/dark.jpg}'
+      picture-uri='file://${dark}'
+
+      [org.gnome.desktop.wm.preferences]
+      button-layout='close,minimize,maximize:'
+      focus-mode='click'
+
+      [org.gnome.desktop.interface]
+      enable-hot-corners=true
+      show-battery-percentage=true
+      clock-show-weekday=true
+      clock-show-seconds=false
+      enable-animations=true
+      gtk-enable-primary-paste=false
+
+      [org.gnome.mutter]
+      dynamic-workspaces=true
+      edge-tiling=true
+      center-new-windows=true
     '';
   };
 }
