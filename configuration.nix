@@ -124,6 +124,7 @@
     clang-tools
     cmake
     btop
+    gnomeExtensions.user-themes
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
