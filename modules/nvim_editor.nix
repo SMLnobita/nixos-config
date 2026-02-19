@@ -19,6 +19,11 @@
         smartindent = true;
         shiftwidth = 2;
         tabstop = 2;
+        expandtab = true;
+        number = true; # Hiện số dòng tuyệt đối
+        relativenumber = true; # Hiện số dòng tương đối để nhảy nhanh
+        signcolumn = "yes"; # Giữ chỗ cho icon lỗi/git
+        wrap = false; # Không tự động xuống dòng tràn lề
       };
 
       theme = {
