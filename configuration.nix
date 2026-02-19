@@ -1,23 +1,24 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hosts/hardware-configuration.nix
-      ./hosts/nvidia.nix
-      ./modules/fonts.nix
-      ./modules/nvim_editor.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hosts/hardware-configuration.nix
+    ./hosts/nvidia.nix
+    ./modules/fonts.nix
+    ./modules/nvim_editor.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_18;
@@ -89,9 +90,9 @@
   users.users.nguyenhoa = {
     isNormalUser = true;
     description = "NguyenHoa";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -109,8 +110,10 @@
     wget
     fastfetch
     vscode
-    curl btop
+    curl
+    btop
     neovim
+    bat
     gnome-tweaks
     wl-clipboard
     gcc
@@ -148,5 +151,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

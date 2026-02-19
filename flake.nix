@@ -8,14 +8,19 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, nvf, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    nvf,
+    ...
+  } @ inputs: {
     # 'nixos' là hostname (Hòa có thể đổi tên này sau nếu thích)
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
-	nvf.nixosModules.default
+        nvf.nixosModules.default
       ];
     };
   };
