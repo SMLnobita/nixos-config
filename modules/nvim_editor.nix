@@ -40,6 +40,7 @@
         filetree.neo-tree.enable = true;
         autocomplete.nvim-cmp.enable = true;
         autopairs.nvim-autopairs.enable = true;
+        dashboard.dashboard-nvim.enable = true;
 
         # --- 2. CẤU HÌNH LSP & TỰ ĐỘNG FORMAT ---
         lsp = {
