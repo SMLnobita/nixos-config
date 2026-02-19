@@ -24,6 +24,7 @@
         relativenumber = true; # Hiện số dòng tương đối để nhảy nhanh
         signcolumn = "yes"; # Giữ chỗ cho icon lỗi/git
         wrap = false; # Không tự động xuống dòng tràn lề
+        list = true;
       };
 
       theme = {
