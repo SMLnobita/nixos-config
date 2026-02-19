@@ -50,9 +50,8 @@
         # --- 3. THỤT LỀ THÔNG MINH CHO DẤU {} ---
         treesitter = {
           indent = {
-                enable = true;
-                disable = [ "nix" ];
-            }
+            enable = true;
+          };
         };
 
         # --- 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix) ---
