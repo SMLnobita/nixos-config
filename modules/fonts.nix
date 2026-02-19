@@ -27,7 +27,7 @@ in {
     };
 
     fontconfig.defaultFonts = {
-      monospace = ["JetBrainsMono Nerd Font Mono"];
+      monospace = ["JetBrainsMono Nerd Font Mono:style=SemiBold"];
       sansSerif = ["SF Pro Text"];
       serif = ["SF Pro Text"];
     };
@@ -41,7 +41,7 @@ in {
         "org/gnome/desktop/interface" = {
           font-name = "SF Pro Text 12";
           document-font-name = "SF Pro Text 12";
-          monospace-font-name = "JetBrainsMono Nerd Font Mono 12";
+          monospace-font-name = "JetBrainsMono Nerd Font Mono SemiBold 12";
           text-scaling-factor = 1.0;
         };
 
