@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.nvf = {
     enable = true;
     enableManpages = true;
@@ -13,8 +15,9 @@
         # --- 1. CẤU HÌNH THỤT LỀ CƠ BẢN ---
         options = {
           autoindent = true; # Tự động lấy lề theo dòng phía trên
-          shiftwidth = 4;    # Độ rộng thụt lề là 4 khoảng trắng (chuẩn C)
-          tabstop = 4;       # Độ rộng của 1 phím Tab
+          smartindent = true; # Tự động lấy lề theo dòng phía trên
+          shiftwidth = 2; # Độ rộng thụt lề là 4 khoảng trắng (chuẩn C)
+          tabstop = 2; # Độ rộng của 1 phím Tab
         };
 
         # Giao diện
@@ -36,6 +39,7 @@
         telescope.enable = true;
         filetree.neo-tree.enable = true;
         autocomplete.nvim-cmp.enable = true;
+        autopairs.nvim-autopairs.enable = true;
 
         # --- 2. CẤU HÌNH LSP & TỰ ĐỘNG FORMAT ---
         lsp = {
@@ -45,14 +49,15 @@
 
         # --- 3. THỤT LỀ THÔNG MINH CHO DẤU {} ---
         treesitter = {
-          indent.enable = true; # Nhận diện cú pháp để tự đẩy lề vào trong khi gõ Enter
+          indent.enable = true; # Nhận diện cú pháp để tự đẩy lề vào trong khi gõ enableTreesitter
+          disable = ["nix"];
         };
 
         # --- 4. CẤU HÌNH NGÔN NGỮ (C/C++, Python, Nix) ---
         languages = {
           enableTreesitter = true;
           enableFormat = true; # Kích hoạt bộ format cho tất cả các ngôn ngữ bên dưới
-          
+
           # Các ngôn ngữ được kích hoạt
           nix.enable = true;
           clang.enable = true; # Phụ trách hỗ trợ lập trình C/C++ và tự dùng clang-format
