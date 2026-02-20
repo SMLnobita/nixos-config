@@ -29,8 +29,8 @@
 
       theme = {
         enable = true;
-        name = "catppuccin";
-        style = "mocha";
+        name = "tokyonight";
+        style = "moon";
       };
 
       clipboard = {

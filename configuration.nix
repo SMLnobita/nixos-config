@@ -94,6 +94,7 @@
     isNormalUser = true;
     description = "NguyenHoa";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       # whitesur-cursors
     ];
