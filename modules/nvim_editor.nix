@@ -140,12 +140,12 @@
           mode = "t";
         }
         {
-          key = "C-s";
+          key = "<C-s>";
           action = ":w<CR>";
           mode = "n";
         }
         {
-          key = "C-s";
+          key = "<C-s>";
           action = "<Esc>:w<CR>";
           mode = "i";
         }
